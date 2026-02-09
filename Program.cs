@@ -26,36 +26,36 @@ namespace COMP003A.Assignment4
                 if (choice == 1)
                     if (!routineActive)
                     {
-                        Console.WriteLine("Routine has already emded.");
+                        Console.WriteLine(" Routine has already emded. ");
                         continue;
                     }  
                         currentStep++;
                 if (currentStep == restrictedStep)
                 {
-                    Console.WriteLine("step" + currentStep + "is restricted and is skipped");
+                    Console.WriteLine(" step " + currentStep + " is restricted and is skipped ");
                 }
                 else if (currentStep == safetyLimit)
                 {
-                    Console.WriteLine("safety limit reached. Routine stopped");
+                    Console.WriteLine(" safety limit reached. Routine stopped ");
                     routineActive = false;
                 }
                 else if (currentStep <= maxSteps)
                 {
-                    Console.WriteLine("routine step" + currentStep + "completed");
+                    Console.WriteLine(" routine step " + currentStep + " completed ");
                     completedSteps++;
                 }
                 if (currentStep >= maxSteps)
                 {
                     routineActive = false;
-                    Console.WriteLine("Routine has Already ended");
+                    Console.WriteLine(" Routine has Already ended");
                 }
                else if (choice == 2)
                 {
-                    Console.WriteLine(" current progress:" + completedSteps + "steps completed.");
+                    Console.WriteLine(" current progress: " + completedSteps + " steps completed.");
                 }
                 else if (choice == 3)
                 {
-                    Console.WriteLine("program endded.");
+                    Console.WriteLine(" program endded.");
                     break;
                 }
             } while (routineActive);
