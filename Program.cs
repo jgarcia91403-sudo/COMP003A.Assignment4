@@ -11,20 +11,24 @@ namespace COMP003A.Assignment4
             int currentStep = 0;
             int completedSteps = 0;
             int maxSteps = 6;
-            int restrictedStep = 3;
+            int restrictedStep = 4;
             int safetyLimit = 5;
             bool routineActive = true;
-            do
-            {
                 Console.WriteLine();
                 Console.WriteLine("1. start/ continue Routine");
                 Console.WriteLine("2. View progress");
                 Console.WriteLine("3. exit");
+            do
+            {
+                Console.ReadLine();
                 Console.Write("Enter Choice:");
                 choice = int.Parse(Console.ReadLine());
                 if (choice == 1)
-                    if (routineActive)
-
+                    if (!routineActive)
+                    {
+                        Console.WriteLine("Routine has already emded.");
+                        continue;
+                    }  
                         currentStep++;
                 if (currentStep == restrictedStep)
                 {
@@ -33,6 +37,7 @@ namespace COMP003A.Assignment4
                 else if (currentStep == safetyLimit)
                 {
                     Console.WriteLine("safety limit reached. Routine stopped");
+                    routineActive = false;
                 }
                 else if (currentStep <= maxSteps)
                 {
@@ -42,19 +47,16 @@ namespace COMP003A.Assignment4
                 if (currentStep >= maxSteps)
                 {
                     routineActive = false;
-                }
-                else
-                {
                     Console.WriteLine("Routine has Already ended");
                 }
-
-                if (choice == 2)
+               else if (choice == 2)
                 {
                     Console.WriteLine(" current progress:" + completedSteps + "steps completed.");
                 }
                 else if (choice == 3)
                 {
                     Console.WriteLine("program endded.");
+                    break;
                 }
             } while (routineActive);
         }
