@@ -20,7 +20,7 @@ namespace COMP003A.Assignment4
                 Console.WriteLine("3. exit");
             do
             {
-                Console.ReadLine();
+                Console.WriteLine();
                 Console.Write("Enter Choice:");
                 choice = int.Parse(Console.ReadLine());
                 if (choice == 1)
